@@ -95,23 +95,87 @@
         </section>
 
         <section class="future-section" id="future-tools">
-            <p class="eyebrow">COMING NEXT</p>
-            <h2>More tools can live here later.</h2>
+    <p class="eyebrow">MORE TOOLS</p>
+    <h2>More calculators for drivers.</h2>
 
-            <div class="tool-grid">
-                <div class="tool-card">
-                    <h3>HP ↔ kW</h3>
-                    <p>Convert horsepower and kilowatts.</p>
-                </div>
+    <div class="calculator-grid">
 
-                <div class="tool-card">
-                    <h3>Tire Size</h3>
-                    <p>Compare different tire sizes.</p>
-                </div>
+        <!-- HP TO KW -->
+        <div class="mini-calculator">
+            <h3>HP → kW</h3>
+            <p>Convert horsepower to kilowatts.</p>
 
-                <div class="tool-card">
-                    <h3>Road Trip</h3>
-                    <p>Split fuel costs between passengers.</p>
+            <input
+                type="number"
+                id="hp-input"
+                placeholder="300"
+                min="0"
+            >
+
+            <button id="hp-to-kw-button">
+                Convert
+            </button>
+
+            <div class="mini-result" id="kw-result">
+                0.00 kW
+            </div>
+        </div>
+
+
+        <!-- KW TO HP -->
+        <div class="mini-calculator">
+            <h3>kW → HP</h3>
+            <p>Convert kilowatts to horsepower.</p>
+
+            <input
+                type="number"
+                id="kw-input"
+                placeholder="200"
+                min="0"
+            >
+
+            <button id="kw-to-hp-button">
+                Convert
+            </button>
+
+            <div class="mini-result" id="hp-result">
+                0.00 HP
+            </div>
+        </div>
+
+
+        <!-- ROAD TRIP SPLIT -->
+        <div class="mini-calculator">
+            <h3>Road Trip Split</h3>
+            <p>Split your trip cost between passengers.</p>
+
+            <input
+                type="number"
+                id="trip-cost-input"
+                placeholder="80"
+                min="0"
+                step="0.01"
+            >
+
+            <input
+                type="number"
+                id="people-input"
+                placeholder="4 people"
+                min="1"
+                step="1"
+            >
+
+            <button id="split-cost-button">
+                Split cost
+            </button>
+
+            <div class="mini-result" id="split-result">
+                €0.00 per person
+            </div>
+        </div>
+
+    </div>
+</section>
                 </div>
             </div>
         </section>
