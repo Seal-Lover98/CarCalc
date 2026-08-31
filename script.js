@@ -27,3 +27,76 @@ function calculateFuelCost() {
     fuelNeededText.textContent = fuelNeeded.toFixed(2) + " L";
     costPerKmText.textContent = "€" + costPerKm.toFixed(2);
 }
+// -----------------------------
+// HP → kW
+// -----------------------------
+
+document
+    .getElementById("hp-to-kw-button")
+    .addEventListener("click", function () {
+
+        const hp =
+            Number(document.getElementById("hp-input").value);
+
+        if (hp <= 0) {
+            document.getElementById("kw-result").textContent =
+                "Enter a valid number";
+            return;
+        }
+
+        const kw = hp * 0.7457;
+
+        document.getElementById("kw-result").textContent =
+            kw.toFixed(2) + " kW";
+    });
+
+
+// -----------------------------
+// kW → HP
+// -----------------------------
+
+document
+    .getElementById("kw-to-hp-button")
+    .addEventListener("click", function () {
+
+        const kw =
+            Number(document.getElementById("kw-input").value);
+
+        if (kw <= 0) {
+            document.getElementById("hp-result").textContent =
+                "Enter a valid number";
+            return;
+        }
+
+        const hp = kw / 0.7457;
+
+        document.getElementById("hp-result").textContent =
+            hp.toFixed(2) + " HP";
+    });
+
+
+// -----------------------------
+// ROAD TRIP SPLIT
+// -----------------------------
+
+document
+    .getElementById("split-cost-button")
+    .addEventListener("click", function () {
+
+        const tripCost =
+            Number(document.getElementById("trip-cost-input").value);
+
+        const people =
+            Number(document.getElementById("people-input").value);
+
+        if (tripCost <= 0 || people < 1) {
+            document.getElementById("split-result").textContent =
+                "Enter valid numbers";
+            return;
+        }
+
+        const costPerPerson = tripCost / people;
+
+        document.getElementById("split-result").textContent =
+            "€" + costPerPerson.toFixed(2) + " per person";
+    });
